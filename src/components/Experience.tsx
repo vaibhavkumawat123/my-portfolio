@@ -26,9 +26,11 @@ export function Experience() {
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="flex items-center justify-center text-4xl md:text-5xl font-bold text-white mb-4 gap-5">
-            <MdOutlineWorkOutline className="text-[76px]" /> <span>Professional and Work Experience</span>
+          <h2 className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 text-center">
+            <MdOutlineWorkOutline className="text-[50px] sm:text-[65px] md:text-[76px]" />
+            <span>Work Experience</span>
           </h2>
+
           <p className="text-xl text-white/70">
             My journey as a MERN stack developer
           </p>
