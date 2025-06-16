@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowDown, Github, Linkedin, Mail, Instagram } from "lucide-react";
 import { Button } from "./ui/button";
 import { GlassCard } from "./GlassCard";
+import img from "../assets/me.jpg";
 
 export function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -22,9 +23,13 @@ export function Hero() {
         <GlassCard className="p-8 md:p-12">
           {/* Avatar */}
           <div className="mb-8">
-            <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
-              <div className="w-full h-full rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-4xl font-bold text-white">
-                VK
+            <div className="w-44 h-44 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-2">
+              <div className="w-full h-full rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-4xl font-bold text-white p-2">
+                <img
+                  className="rounded-full w-full h-full object-cover"
+                  src={img}
+                  alt="Profile"
+                />
               </div>
             </div>
           </div>

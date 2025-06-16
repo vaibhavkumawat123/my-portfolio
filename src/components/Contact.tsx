@@ -4,6 +4,7 @@ import { GlassCard } from "./GlassCard";
 import { Button } from "./ui/button";
 import { MdContactMail } from "react-icons/md";
 import { IoMdContact } from "react-icons/io";
+import { toast } from "sonner";
 
 export function Contact() {
   return (
@@ -20,11 +21,13 @@ export function Contact() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
+          {/* Contact Info */}
           <GlassCard className="p-8">
             <h3 className="flex items-center justify-center gap-1 text-2xl font-semibold text-white mb-10">
               <IoMdContact className="text-[34px]" />
               Contact Information
             </h3>
+
             <div className="space-y-6">
               <div className="flex items-center gap-4 text-white/80">
                 <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center">
@@ -58,9 +61,7 @@ export function Contact() {
             </div>
 
             <div className="mt-8">
-              <h4 className="text-lg font-semibold text-white mb-4">
-                Follow Me
-              </h4>
+              <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
               <div className="flex gap-4">
                 <a
                   className="hover:scale-125"
@@ -96,67 +97,70 @@ export function Contact() {
             </div>
           </GlassCard>
 
+          {/* Message Form */}
           <GlassCard className="p-8">
-            <h3 className="text-2xl font-semibold text-white mb-6">
-              Send Message
-            </h3>
-            <form className="space-y-6">
+            <h3 className="text-2xl font-semibold text-white mb-6">Send Message</h3>
+            <form
+              className="space-y-6"
+              onSubmit={(e) => {
+                e.preventDefault();
+
+                toast.success("Message sent successfully! 🎉", {
+                  description: "I'll get back to you soon!",
+                  duration: 4000,
+                });
+
+                e.currentTarget.reset();
+              }}
+            >
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-white font-medium mb-2"
-                >
+                <label htmlFor="name" className="block text-white font-medium mb-2">
                   Name
                 </label>
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-400 transition-colors backdrop-blur-sm"
+                  required
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-400 backdrop-blur-sm"
                   placeholder="Your Name"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-white font-medium mb-2"
-                >
+                <label htmlFor="email" className="block text-white font-medium mb-2">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-400 transition-colors backdrop-blur-sm"
+                  required
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-400 backdrop-blur-sm"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-white font-medium mb-2"
-                >
+                <label htmlFor="subject" className="block text-white font-medium mb-2">
                   Subject
                 </label>
                 <input
                   type="text"
+                  required
                   id="subject"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-400 transition-colors backdrop-blur-sm"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-400 backdrop-blur-sm"
                   placeholder="Project Discussion"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-white font-medium mb-2"
-                >
+                <label htmlFor="message" className="block text-white font-medium mb-2">
                   Message
                 </label>
                 <textarea
                   id="message"
+                  required
                   rows={4}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-400 transition-colors resize-none backdrop-blur-sm"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-blue-400 resize-none backdrop-blur-sm"
                   placeholder="Tell me about your project requirements..."
                 ></textarea>
               </div>

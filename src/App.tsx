@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowUp } from 'lucide-react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
-import { Navigation } from './components/Navigation';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Skills } from './components/Skills';
-import { Projects } from './components/Projects';
-import { Contact } from './components/Contact';
-import { Button } from './components/ui/button';
-import { Experience } from './components/Experience';
+import React, { useState, useEffect } from "react";
+import { ArrowUp } from "lucide-react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navigation } from "./components/Navigation";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Skills } from "./components/Skills";
+import { Projects } from "./components/Projects";
+import { Contact } from "./components/Contact";
+import { Button } from "./components/ui/button";
+import { Experience } from "./components/Experience";
+import { Toaster } from "sonner";
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -19,12 +19,12 @@ function App() {
       setShowScrollTop(window.scrollY > 400);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -41,16 +41,19 @@ function App() {
 
         {/* Routes */}
         <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <About />
-              <Skills />
-              <Projects />
-              <Experience />
-              <Contact />
-            </>
-          } />
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <About />
+                <Skills />
+                <Projects />
+                <Experience />
+                <Contact />
+              </>
+            }
+          />
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
@@ -62,7 +65,8 @@ function App() {
         <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-black/20">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-white/70">
-              © 2024 Vaibhav Kumawat. Built with React, JavaScript, and Tailwind CSS.
+              © 2024 Vaibhav Kumawat. Built with React, JavaScript, and Tailwind
+              CSS.
             </p>
           </div>
         </footer>
@@ -78,6 +82,18 @@ function App() {
             <ArrowUp size={20} />
           </Button>
         )}
+
+        {/* ✅ Toast Notification Handler */}
+        <Toaster
+          position="top-right"
+          richColors
+          toastOptions={{
+            classNames: {
+              toast:
+                "bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 text-white shadow-lg border-none font-semibold text-sm",
+            },
+          }}
+        />
       </div>
     </Router>
   );
