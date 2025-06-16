@@ -4,66 +4,26 @@ import { GlassCard } from "./GlassCard";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { GoProjectRoadmap } from "react-icons/go";
+import poster1 from "../assets/poster1.png";
+import poster2 from "../assets/NewsAI.png";
 
 export function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "BlogFoster",
       description:
-        "Full-stack e-commerce application with user authentication, product management, shopping cart, and payment integration using Stripe.",
-      image:
-        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe", "JWT"],
+        "BlogFoster is a minimalist social blogging platform built with the MERN stack. It lets users create, edit, and manage posts with ease.Clean UI, author-wise post display, and smooth dynamic routing for every blog.",
+      image: poster1,
+      technologies: ["React", "Node.js", "MongoDB", "Express", "JavaScript", "JWT"],
       github: "#",
       live: "#",
     },
     {
-      title: "Task Management System",
+      title: "NewsAI",
       description:
-        "Collaborative project management tool with real-time updates, team collaboration features, and progress tracking.",
-      image:
-        "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Socket.io", "Node.js", "MongoDB", "Express"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Social Media Dashboard",
-      description:
-        "Analytics dashboard for social media management with data visualization, post scheduling, and engagement metrics.",
-      image:
-        "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Chart.js", "Node.js", "MongoDB", "REST API"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Real-time Chat Application",
-      description:
-        "Modern chat application with real-time messaging, file sharing, group chats, and user presence indicators.",
-      image:
-        "https://images.pexels.com/photos/1591062/pexels-photo-1591062.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Socket.io", "Node.js", "MongoDB", "Cloudinary"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Blog Platform",
-      description:
-        "Full-featured blogging platform with rich text editor, comment system, user profiles, and content management.",
-      image:
-        "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["Next.js", "Node.js", "MongoDB", "Rich Text Editor"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Weather App",
-      description:
-        "Weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-      image:
-        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Weather API", "Geolocation", "Charts"],
+        "NewsAI is an AI-powered news platform that delivers real-time, personalized updates based on your interests. It intelligently filters out fake or irrelevant content, ensuring you only see accurate and meaningful news. With a clean interface and smart recommendations, NewsAI keeps you informed, faster and smarter.",
+      image: poster2,
+      technologies: ["React", "Node.js", "MongoDB", "Express", "JavaScript", "JWT"],
       github: "#",
       live: "#",
     },
